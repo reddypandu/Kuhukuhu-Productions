@@ -23,11 +23,11 @@
   --zeinet-gray-rgb: 129, 135, 132;
   --zeinet-white: #ffffff;
   --zeinet-white-rgb: 255, 255, 255;
-  --zeinet-base: #fe9043;
+  --zeinet-base: #2e658f;
   --zeinet-base-rgb: 254, 144, 67;
   --zeinet-black: #30353a;
   --zeinet-black-rgb: 48, 53, 58;
-  --zeinet-primary: #089fac;
+  --zeinet-primary: #2e658f;
   --zeinet-primary-rgb: 8, 159, 172;
   --zeinet-extra: #f7f5f1;
   --zeinet-extra-rgb: 247, 245, 241;
@@ -768,7 +768,7 @@ ul {
 
 .main-menu .main-menu__list > li > a,
 .stricky-header .main-menu__list > li > a {
-  font-size: 14px;
+  font-size: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1876,7 +1876,7 @@ ul {
 .main-menu-three__main-menu-content-box {
   position: relative;
   display: block;
-  margin-left: 20px;
+  margin-left: 80px;
   padding: 33px 0;
 }
 
@@ -13644,7 +13644,7 @@ body.megamenu-popup-active .mobile-nav__content {
 /*-- 20-01-2024 --*/
 .thm-btn--home-four {
   border-radius: 0;
-  color: var(--zeinet-black);
+  color: var(--zeinet-white);
   padding: 13px 40.5px;
   border: none;
   outline: none;
@@ -15240,7 +15240,7 @@ body.megamenu-popup-active .mobile-nav__content {
   background-color: var(--zeinet-base);
   font-size: 18px;
   padding:5px 10px;
-  color: var(--zeinet-black2);
+  color: var(--zeinet-white);
   margin: 0 auto;
   position: absolute;
   left: 0;
