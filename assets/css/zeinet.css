@@ -14792,7 +14792,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 .about-five__image img {
   max-width: 100%;
-  border-radius: 250px;
+  /* border-radius: 250px; */
 }
 .about-five__image__double {
   display: flex;
