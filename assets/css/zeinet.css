@@ -46,13 +46,61 @@
 }
 
 body {
-  font-family: var(--zeinet-font);
+  font-family: "Outfit", sans-serif;
   color: var(--zeinet-gray);
   font-size: 16px;
   line-height: 30px;
   font-weight: 500;
 }
 
+/* From Uiverse.io by Ali-Tahmazi99 */ 
+.loading {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.d1 , .d2 {
+  border: 5px solid var(--zeinet-primary);
+  border-radius: 50px;
+}
+
+.loading .d1 {
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  border-left-color: transparent;
+  animation: load161 1s linear infinite;
+}
+
+.loading .d2 {
+  width: 40px;
+  height: 40px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  margin: 7.5px;
+  animation: load2812 1.5s linear infinite;
+}
+
+@keyframes load161 {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load2812 {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 body.locked {
   overflow: hidden;
 }
@@ -1876,7 +1924,7 @@ ul {
 .main-menu-three__main-menu-content-box {
   position: relative;
   display: block;
-  margin-left: 80px;
+  margin-left: 30px;
   padding: 33px 0;
 }
 
