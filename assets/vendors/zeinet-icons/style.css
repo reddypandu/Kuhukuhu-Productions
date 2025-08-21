@@ -139,3 +139,74 @@
 .icon-placeholder:before {
   content: "\e924";
 }
+
+
+.partners {
+  background: #f5faff;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.section-title h4 {
+  color: #2c7a73;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.section-title h2 {
+  margin-top: 12px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+}
+
+.carousel-container {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 220px;
+  margin: 0 12px;
+  /* background: #fff; */
+  background: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.carousel-item img {
+  max-width: 100%;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+/* continuous scroll */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .carousel-item {
+    width: 160px;
+    padding: 20px;
+  }
+}
