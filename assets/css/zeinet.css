@@ -16958,11 +16958,15 @@ color: var(--zeinet-white);
 .brand-three .swiper-slide img {
   max-width: 100%;
   cursor: pointer;
-  filter: brightness(0) invert(1);
+  /* filter: brightness(0) invert(1); */
   transition: all 600ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
+
 .brand-three .swiper-slide img:hover {
-  filter: brightness(1) invert(0);
+  /* filter: brightness(1) invert(0); */
 }
 .brand-three--home-five {
   position: relative;
