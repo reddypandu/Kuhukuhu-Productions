@@ -10096,7 +10096,7 @@ padding:0.5rem;
   left: 30px;
   right: 80px;
   padding: 23px 30px 27px;
-  transform: scaleY(0);
+  transform: scaleY(1);
   transform-origin: center;
   transform-style: preserve-3d;
   -webkit-transition: all 0.4s linear;
@@ -10106,14 +10106,14 @@ padding:0.5rem;
   z-index: 2;
 }
 
-.team-one__single:hover .team-one__content {
+/* .team-one__single:hover .team-one__content {
   transform: scaleY(1);
   -webkit-transition-delay: 500ms;
   -moz-transition-delay: 500ms;
   -ms-transition-delay: 500ms;
   -o-transition-delay: 500ms;
   transition-delay: 500ms;
-}
+} */
 
 .team-one__content:before {
   position: absolute;
