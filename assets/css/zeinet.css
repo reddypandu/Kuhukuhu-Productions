@@ -480,10 +480,11 @@ ul {
   display: none;
   border-radius: 50%;
   cursor: pointer;
+  color: var(--zeinet-white) !important;
 }
 
 .scroll-to-top i {
-  color: var(--zeinet-white);
+  color: var(--zeinet-white) !important;
   font-size: 18px;
   line-height: 50px;
   -webkit-transition: all 0.4s ease;
