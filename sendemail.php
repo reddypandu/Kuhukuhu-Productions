@@ -1,38 +1,71 @@
 <?php
+// Include PHPMailer library
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-// Define some constants
-define( "RECIPIENT_NAME", "John Doe" );
-define( "RECIPIENT_EMAIL", "kuhubiwc@kuhukuhu.com" );
+require './vendor/autoload.php';
 
-// Read the form values
-$success = false;
-$name = isset( $_POST['name'] ) ? preg_replace( "/[^\.\-\' a-zA-Z0-9]/", "", $_POST['name'] ) : "";
-$senderEmail = isset( $_POST['email'] ) ? preg_replace( "/[^\.\-\_\@a-zA-Z0-9]/", "", $_POST['email'] ) : "";
-$phone = isset( $_POST['phone'] ) ? preg_replace( "/[^\.\-\_\@a-zA-Z0-9]/", "", $_POST['phone'] ) : "";
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$message = isset( $_POST['message'] ) ? preg_replace( "/(From:|To:|BCC:|CC:|Subject:|Content-Type:)/", "", $_POST['message'] ) : "";
+    $name    = $_POST['name'] ?? '';
+    $email   = $_POST['email'] ?? '';
+    $phone   = $_POST['phone'] ?? '';
+    $message = $_POST['message'] ?? '';
 
-$mail_subject = 'A contact request send by ' . $name;
+    // Create a new PHPMailer instance
+    $mail = new PHPMailer(true);
 
-$body = 'Name: '. $name . "\r\n";
-$body .= 'Email: '. $senderEmail . "\r\n";
+    try {
+        // SMTP configuration
+        $mail->isSMTP();
+        $mail->Host       = 'server360.web-hosting.com'; // 👉 Replace with your SMTP server (e.g., smtp.hostinger.com, smtp.gmail.com)
+        $mail->SMTPAuth   = false;
+        $mail->Username   = 'Dmail'; // 👉 Replace with your SMTP email
+        $mail->Password   = 'pas'; // 👉 Replace with your SMTP password
+        $mail->Port       = 465; 
+        $mail->SMTPSecure = 'ssl'; // If using TLS, change to 'tls' and port 587
 
+        // Email settings
+        $mail->setFrom('info@kuhukuhu.com', 'Kuhukuhu Productions Contact Form');
+        $mail->addAddress('pan@gmail.com'); // 👉 Receiver email (same as above or another)
 
-if ($phone) {$body .= 'Phone: '. $phone . "\r\n"; }
+        $mail->Subject = "New Inquiry from $name";
+        $mail->isHTML(true);
 
+        // Email content
+        $mailContent = '
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; padding: 20px;">
+            <h2 style="color: #1976d2; text-align: center;">Kuhukuhu Productions</h2>
+            <h3 style="text-align: center; color: #444;">New Contact Form Submission</h3>
+            <hr style="border-top: 1px solid #ccc;">
 
-$body .= 'message: ' . "\r\n" . $message;
+            <p><strong>Name:</strong> ' . htmlspecialchars($name) . '</p>
+            <p><strong>Email:</strong> ' . htmlspecialchars($email) . '</p>
+            <p><strong>Phone:</strong> ' . htmlspecialchars($phone) . '</p>
+            <p><strong>Message:</strong><br>' . nl2br(htmlspecialchars($message)) . '</p>
 
+            <hr style="border-top: 1px solid #ccc;">
+            <p style="font-size: 12px; color: #777; text-align: center;">
+                This message was sent from the contact form on the Kuhukuhu Productions website.
+            </p>
+        </div>';
 
+        $mail->Body = $mailContent;
 
-// If all values exist, send the email
-if ( $name && $senderEmail && $message ) {
-  $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
-  $headers = "From: " . $name . " <" . $senderEmail . ">";  
-  $success = mail( $recipient, $mail_subject, $body, $headers );
-  echo "<div class='inner success'><p class='success'>Thanks for contacting us. We will contact you ASAP!</p></div><!-- /.inner -->";
-}else {
-	echo "<div class='inner error'><p class='error'>Something went wrong. Please try again.</p></div><!-- /.inner -->";
+        // Send the email
+       if ($mail->send()) {
+    echo '<p style="color: green;">✅ Thank you! Your message has been sent successfully.</p>';
+} else {
+    echo '<p style="color: red;">❌ Sorry, email could not be sent. Please try again later.</p>';
 }
 
-?>
+
+    } catch (Exception $e) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+} else {
+    // Redirect if accessed directly
+    header('Location: index.html');
+    exit;
+}
