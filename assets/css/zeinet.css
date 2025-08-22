@@ -2957,7 +2957,7 @@ padding:0.5rem;
   left: 0;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: left center;
+  background-position: center center;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: opacity 1500ms ease-in, -webkit-transform 7000ms ease;
