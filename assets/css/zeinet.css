@@ -14923,9 +14923,10 @@ body.megamenu-popup-active .mobile-nav__content {
   font-weight: 500;
   line-height: 20px;
   margin: 0;
+  margin-right:4rem;
 }
 .about-five__counter + .about-five__counter {
-  padding-left: 25px;
+  padding-left: 10px;
   border-left: 1px solid var(--zeinet-white);
 }
 @media (min-width: 992px) and (max-width: 1199px) {
