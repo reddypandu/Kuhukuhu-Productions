@@ -187,7 +187,7 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(assets/images/brand/1.png)">
+            <div class="page-header-bg">
             </div>
             <div class="main-slider-border"></div>
             <div class="main-slider-border main-slider-border-two"></div>
@@ -209,7 +209,16 @@
             </div>
         </section>
         <!--Page Header End-->
-
+<style>
+  .page-header .page-header-bg{
+background-image: url(assets/images/brand/1.png);
+  }
+  @media(max-width:992px){
+     .page-header .page-header-bg{
+background-image: url(assets/images/brand/production-mobile.png);
+  }
+  }
+</style>
         <!--Service Details Start-->
       <section class="service-details">
     <div class="container">
