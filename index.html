@@ -1209,6 +1209,9 @@
 
 
 
+
+
+
     <!-- FAQ Section Start -->
     <section class="faq-section py-5">
       <div class="container">
@@ -1539,6 +1542,63 @@
     </style>
 
 
+<!-- Popup Video -->
+<div class="popup-video" id="popupVideo">
+  <div class="popup-video__close" id="closeVideo">
+    <span class="fa fa-times"></span>
+  </div>
+  <div class="popup-video__content">
+    <div class="popup-video__frame">
+      <video id="popupVideoFile" src="assets/video/popup.mp4" autoplay muted controls></video>
+    </div>
+  </div>
+</div>
+
+<style>
+  .popup-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* hidden initially */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .popup-video__content {
+    max-width: 50%;
+    max-height: 50%;
+  }
+
+  .popup-video__frame video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .popup-video__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+  @media(max-width:992px){
+     .popup-video__content {
+    max-width: 80%;
+    max-height: 100%;
+  }
+  }
+</style>
+
+
+
   </div><!-- /.page-wrapper -->
 
 
@@ -1629,7 +1689,28 @@
   <script src="assets/vendors/circleType/jquery.circleType.js"></script>
   <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
 
+<script>
+  const popup = document.getElementById("popupVideo");
+  const closeBtn = document.getElementById("closeVideo");
+  const videoFile = document.getElementById("popupVideoFile");
 
+  // Show popup only after full page load
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      popup.style.display = "flex";
+      videoFile.play().catch(() => {
+        videoFile.muted = true;
+        videoFile.play();
+      });
+    }, 500); // delay 0.5s after load (you can change this)
+  });
+
+  // Close popup on clicking X
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+    videoFile.pause(); // stop video when closing
+  });
+</script>
 
 
   <!-- template js -->
