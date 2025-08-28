@@ -1795,7 +1795,7 @@ padding:0.5rem;
 
 .main-menu-three__contact-list li .icon i {
   font-size: 14px;
-  color: var(--zeinet-base);
+  color: var(--zeinet-white);
 }
 
 .main-menu-three__contact-list li .text {
@@ -1804,11 +1804,11 @@ padding:0.5rem;
 
 .main-menu-three__contact-list li .text p {
   font-size: 13px;
-  color: #a4a9ae;
+  color: #fff;
 }
 
 .main-menu-three__contact-list li .text p a {
-  color: #a4a9ae;
+  color: #fff;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
 }
@@ -1853,7 +1853,7 @@ padding:0.5rem;
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: 120px;
+  margin-left: 20px;
 }
 
 .main-menu-three__social a {
