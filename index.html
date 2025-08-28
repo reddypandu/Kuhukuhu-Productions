@@ -373,11 +373,12 @@
     <!--About Start-->
     <section class="about-five">
       <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
           <!-- Left Side Images -->
           <div class="col-lg-6 wow slideInLeft">
           <div class="about-four__img-one">
-                            <img src="assets/images/brand/kuhukuhu.png" alt="Film Production Work">
+                            <!-- <img src="assets/images/brand/kuhukuhu.png" alt="Film Production Work"> -->
+                             <video id="popupVideoFile" src="assets/video/about-us.mp4" autoplay muted loop></video>
                         </div>
           </div>
 
@@ -1543,7 +1544,7 @@
 
 
 <!-- Popup Video -->
-<div class="popup-video" id="popupVideo">
+<!-- <div class="popup-video" id="popupVideo">
   <div class="popup-video__close" id="closeVideo">
     <span class="fa fa-times"></span>
   </div>
@@ -1552,7 +1553,7 @@
       <video id="popupVideoFile" src="assets/video/popup.mp4" autoplay muted controls></video>
     </div>
   </div>
-</div>
+</div> -->
 
 <style>
   .popup-video {
@@ -1690,26 +1691,26 @@
   <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
 
 <script>
-  const popup = document.getElementById("popupVideo");
-  const closeBtn = document.getElementById("closeVideo");
-  const videoFile = document.getElementById("popupVideoFile");
+  // const popup = document.getElementById("popupVideo");
+  // const closeBtn = document.getElementById("closeVideo");
+  // const videoFile = document.getElementById("popupVideoFile");
 
-  // Show popup only after full page load
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      popup.style.display = "flex";
-      videoFile.play().catch(() => {
-        videoFile.muted = true;
-        videoFile.play();
-      });
-    }, 500); // delay 0.5s after load (you can change this)
-  });
+  // // Show popup only after full page load
+  // window.addEventListener("load", () => {
+  //   setTimeout(() => {
+  //     popup.style.display = "flex";
+  //     videoFile.play().catch(() => {
+  //       videoFile.muted = true;
+  //       videoFile.play();
+  //     });
+  //   }, 500); // delay 0.5s after load (you can change this)
+  // });
 
-  // Close popup on clicking X
-  closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-    videoFile.pause(); // stop video when closing
-  });
+  // // Close popup on clicking X
+  // closeBtn.addEventListener("click", () => {
+  //   popup.style.display = "none";
+  //   videoFile.pause(); // stop video when closing
+  // });
 </script>
 
 
